@@ -1,0 +1,38 @@
+<form #form="ngForm" (ngSubmit)="save(form.value)">
+<div class="modal-header">
+  <h5 class="modal-title" id="exampleModalLabel">Add Classe</h5>
+  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+</div>
+<div class="modal-body">
+    <div class="row">
+      <div class="col">
+        <label class="col-form-label">*Libelle:</label>
+        <input type="text" name="libelle" class="form-control" ngModel>
+      </div>
+      <div class="col">
+        <label class="col-form-label">*Droit d'incription</label>
+        <input type="text" name="droit_inscription" class="form-control" ngModel>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <label class="col-form-label">*Mensualité:</label>
+        <input type="text" name="mensualite" class="form-control" ngModel>
+      </div>
+      <div class="col">
+        <label class="col-form-label">*Autre Frais</label>
+        <input type="text" name="autre_frais" class="form-control" ngModel>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="inputState" class="form-label">*Filieres</label>
+      <select id="inputState" name="filiere_id" class="form-select" ngModel>
+        <option *ngFor='let f of filieres' value="{{f.id}}">{{f.libelle}}</option>
+      </select>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="activeModal.dismiss('Cross click')">Close</button>
+    <button type="submit" class="btn btn-primary">Save</button>
+  </div>
+</form>
